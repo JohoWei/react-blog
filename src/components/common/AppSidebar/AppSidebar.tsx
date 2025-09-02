@@ -26,7 +26,7 @@ const items = [
   },
   {
     title: 'Inbox',
-    url: '/firstPost',
+    url: '/Inbox',
     icon: Inbox
   },
   {
