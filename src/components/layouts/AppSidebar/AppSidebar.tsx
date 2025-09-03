@@ -14,14 +14,12 @@ import {
 } from '@/components/ui/sidebar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Home, Inbox, Calendar, Search, Settings, User2, ChevronUp, Plus, Projector } from 'lucide-react'
-
-
-
+import { Link } from 'react-router'
 
 const items = [
   {
     title: 'Home',
-    url: '/',
+    url: '/Home',
     icon: Home
   },
   {
@@ -31,17 +29,17 @@ const items = [
   },
   {
     title: 'Calendar',
-    url: '#',
+    url: '/Calendar',
     icon: Calendar
   },
   {
     title: 'Search',
-    url: '#',
+    url: '/Search',
     icon: Search
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/Settings",
     icon: Settings,
   },
 ]
@@ -71,10 +69,10 @@ export default function AppSidebar() {
                           {items.map((item) =>(
                               <SidebarMenuItem key={item.title}>
                                   <SidebarMenuButton asChild>
-                                      <a href={item.url}>
-                                          <item.icon />
-                                          <span>{item.title}</span>
-                                      </a>
+                                    <Link to={item.url}>
+                                        <item.icon />
+                                        <span>{item.title}</span>
+                                    </Link>
                                   </SidebarMenuButton>
                               </SidebarMenuItem>
                           ))}
@@ -90,10 +88,10 @@ export default function AppSidebar() {
                           <SidebarMenu>
                               <SidebarMenuItem>
                                   <SidebarMenuButton asChild>
-                                      <a href="/#">
+                                      <Link to="/dashboard">
                                           <Projector></Projector>
                                           See All Projects
-                                      </a>
+                                      </Link>
                                   </SidebarMenuButton>
                               </SidebarMenuItem>
                           </SidebarMenu>
