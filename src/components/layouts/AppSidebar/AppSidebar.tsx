@@ -14,12 +14,14 @@ import {
 } from '@/components/ui/sidebar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Home, Inbox, Calendar, Search, Settings, User2, ChevronUp, Plus, Projector } from 'lucide-react'
-import { Link } from 'react-router'
+import { NavLink } from 'react-router'
+import Router from '@/routers'
+import React, { useEffect } from 'react'
 
 const items = [
   {
     title: 'Home',
-    url: '/Home',
+    url: '/',
     icon: Home
   },
   {
@@ -44,8 +46,21 @@ const items = [
   },
 ]
 
-
 export default function AppSidebar() {
+    const [authItems, setAuthItems] = React.useState<any[]>([])
+
+    useEffect(() => {
+        const nextAuthItems = []
+        items.filter(item => {
+            Router.routes[0].children?.map(router => {
+                if(router.path == item.title) {
+                    nextAuthItems.push(item)
+                }
+            })
+        })
+        setAuthItems(nextAuthItems)
+    }, [Router.routes])
+
   return (
     <>
       <Sidebar collapsible='icon'>
@@ -66,13 +81,13 @@ export default function AppSidebar() {
                   <SidebarGroupLabel>Application</SidebarGroupLabel>
                   <SidebarGroupContent>
                       <SidebarMenu>
-                          {items.map((item) =>(
+                          {authItems.map((item) =>(
                               <SidebarMenuItem key={item.title}>
                                   <SidebarMenuButton asChild>
-                                    <Link to={item.url}>
+                                    <NavLink  to={item.url}>
                                         <item.icon />
                                         <span>{item.title}</span>
-                                    </Link>
+                                    </NavLink>
                                   </SidebarMenuButton>
                               </SidebarMenuItem>
                           ))}
@@ -88,10 +103,10 @@ export default function AppSidebar() {
                           <SidebarMenu>
                               <SidebarMenuItem>
                                   <SidebarMenuButton asChild>
-                                      <Link to="/dashboard">
+                                      <NavLink  to="/dashboard">
                                           <Projector></Projector>
                                           See All Projects
-                                      </Link>
+                                      </NavLink>
                                   </SidebarMenuButton>
                               </SidebarMenuItem>
                           </SidebarMenu>

@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ThemeProvider } from '@/components/common/ThemeProvider/ThemeProvide'
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import Navbar from './Navbar/Navbar'
 import AppSidebar from './AppSidebar/AppSidebar'
 import { Outlet } from 'react-router'
+import { mockBackendAPI } from '@/routers'
 
 function Layout({children}: Readonly<{
   children: React.ReactNode;
 }>){
-
   const defaultOpen = localStorage.getItem('sidebar-open') === 'true'
 
   return (
