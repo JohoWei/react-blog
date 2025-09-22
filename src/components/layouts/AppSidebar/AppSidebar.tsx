@@ -13,7 +13,7 @@ import {
     SidebarSeparator 
 } from '@/components/ui/sidebar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { Home, Inbox, Calendar, Search, Settings, User2, ChevronUp, Plus, Projector } from 'lucide-react'
+import { Home, Inbox, Calendar, Search, Settings, User2, ChevronUp, Plus, Projector, Pill } from 'lucide-react'
 import { NavLink } from 'react-router'
 import Router from '@/routers'
 import React, { useEffect } from 'react'
@@ -44,6 +44,11 @@ const items = [
     url: "/Settings",
     icon: Settings,
   },
+  {
+    title: "Medicine",
+    url: "/Medicine",
+    icon: Pill,
+  }
 ]
 
 export default function AppSidebar() {
@@ -75,7 +80,7 @@ export default function AppSidebar() {
                   </SidebarMenuItem>
               </SidebarMenu>
           </SidebarHeader>
-          <SidebarSeparator></SidebarSeparator>
+          <SidebarSeparator className='w-auto!'></SidebarSeparator>
           <SidebarContent>
               <SidebarGroup>
                   <SidebarGroupLabel>Application</SidebarGroupLabel>

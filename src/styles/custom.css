@@ -1,0 +1,23 @@
+@theme inline {
+  --color-custom-color: var(--custom-color);
+  --color-custom-primary: var(--custom-primary);
+  --color-custom-primary-hover: var(--custom-primary-hover);
+  --color-custom-primary-foreground: var(--custom-primary-foreground);
+  --color-custom-border-color: var(--custom-border-color);
+}
+
+:root {
+  --custom-color: rgba(255, 255, 255, 1);
+  --custom-primary: rgb(57, 96, 255);
+  --custom-primary-hover: rgba(60, 99, 255, 0.5);
+  --custom-primary-foreground: #FFFFFF;
+  --custom-border-color: #FFFFFF;
+}
+
+.dark {
+  --custom-color: rgba(255, 255, 255, 1);
+  --custom-primary: rgb(57, 96, 255);
+  --custom-primary-hover: rgba(60, 99, 255, 0.5);
+  --custom-primary-foreground: #FFFFFF;
+  --custom-border-color: #FFFFFF;
+}

@@ -3,12 +3,13 @@ import { createBrowserRouter, type RouteObject } from "react-router";
 import { type RouterConfig } from "./types/router.type";
 import commonRouter from "./commonRouter";
 import Layout from "@/components/layouts";
-import Home from "@/modules/Home/pages";
-import Inbox from "@/modules/Inbox/pages";
 import Page404 from '@/modules/System/pages/404';
-import Search from "@/modules/Search/pages";
-import Settings from "@/modules/Settings/pages";
-import Calendar from "@/modules/Calendar/pages";
+
+// import Home from "@/modules/Home/pages";
+// import Inbox from "@/modules/Inbox/pages";
+// import Search from "@/modules/Search/pages";
+// import Settings from "@/modules/Settings/pages";
+// import Calendar from "@/modules/Calendar/pages";
 
 
 interface AuthContextType {
@@ -34,7 +35,7 @@ export const mockBackendAPI = {
         { path: 'Search',  name: 'Search', filePath: '/Search/pages/index.tsx' },
         { path: 'Settings',  name: 'Setting', filePath: '/Settings/pages/index.tsx' },
         { path: 'Calendar',  name: 'Calendar', filePath: '/Calendar/pages/index.tsx' },
-
+        { path: 'Medicine',  name: 'Medicine', filePath: '/Medicine/pages/index.tsx' },
       ],
       user: [
         { index: true,  name: '首页', filePath: '/Home/pages/index.tsx' },

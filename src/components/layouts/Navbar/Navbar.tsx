@@ -19,7 +19,7 @@ export default function Navbar() {
   localStorage.setItem('sidebar-open', open.toString())
 
   return (
-    <nav className="p-4 flex items-center justify-between">
+    <nav className="p-4 flex items-center justify-between box-border h-full border-b-[1px]">
       {/* LEFT */}
       <SidebarTrigger></SidebarTrigger>
       {/* RIGHT */}

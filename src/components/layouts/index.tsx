@@ -25,7 +25,7 @@ function Layout({children}: Readonly<{
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
             <main className='w-full'>
-              <header>
+              <header className='h-[64px]'>
                 <Navbar />
               </header>
               <div className="px-4">
